@@ -10,7 +10,9 @@ const ABI = require("./abi.json");
 
 app.use(cors());
 app.use(express.json());
-
+app.get('/', (req, res) => {
+    res.send('Hello, world!');
+  });
 function convertArrayToObjects(arr) {
   const dataArray = arr.map((transaction, index) => ({
     key: (arr.length + 1 - index).toString(),
